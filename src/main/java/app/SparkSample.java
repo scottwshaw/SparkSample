@@ -1,5 +1,6 @@
-package hello;
+package app;
 import spark.ModelAndView;
+import views.EnliveTemplatingEngine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,12 +9,12 @@ import static spark.Spark.get;
 /**
  * Created by sshaw on 9/10/2015.
  */
-public class Hello {
+public class SparkSample     {
     public static void main(String[] args) {
         Map model = new HashMap();
-        get("/hello/:name", (req, res) -> {
+        get("/app/:name", (req, res) -> {
             model.put("name", req.params(":name"));
-            return new ModelAndView(model,"hello");
+            return new ModelAndView(model, "app");
         }, new EnliveTemplatingEngine());
         get("/hellofrom/:to/:from", (req, res) -> {
             model.put("to", req.params(":to"));

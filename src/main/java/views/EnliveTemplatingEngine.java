@@ -1,4 +1,4 @@
-package hello;
+package views;
 
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;
